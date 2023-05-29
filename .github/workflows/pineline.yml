@@ -28,7 +28,7 @@ jobs:
           job-status: 'success'
 
       - name: Build project
-        run: ./gradlew.bat build
+        run: gradle build
 
       - name: Run tests
         run: ./gradlew test --info --tests "co.edu.udea.certificacion.calidad.runners.SimulationBancolombia"
