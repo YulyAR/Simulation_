@@ -30,7 +30,7 @@ jobs:
       - name: Install Gradle
         run: |
           wget https://services.gradle.org/distributions/gradle-6.3-bin.zip
-          unzip gradle-7.6.3-bin.zip
+          unzip gradle-6.3-bin.zip
           export PATH=$PATH:C:\Users\yulya\Documents\gradle-6.3
 
       - name: Build project
