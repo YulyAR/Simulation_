@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
@@ -26,6 +26,9 @@ jobs:
           server-password: ${{ secrets.GITHUB_TOKEN }}
           overwrite-settings: true
           job-status: 'success'
-          
-      - name: Run tests
-        run: ./gradlew test --info --tests "co.edu.udea.certificacion.calidad.runners.SimulationBancolombia"
+
+      - name: Grant execute permission to gradlew
+        run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+      - name: Run Gradle tests
+        run: .\gradlew.bat test --info --tests "co.edu.udea.certificacion.calidad.runners.SimulationBancolombia"
