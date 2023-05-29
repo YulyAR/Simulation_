@@ -27,14 +27,5 @@ jobs:
           overwrite-settings: true
           job-status: 'success'
           
-      - name: Install Gradle
-        run: |
-          wget https://services.gradle.org/distributions/gradle-6.3-bin.zip
-          unzip gradle-6.3-bin.zip
-          export PATH=$PATH:C:\Users\yulya\Documents\gradle-6.3
-
-      - name: Build project
-        run: gradle build
-
       - name: Run tests
         run: ./gradlew test --info --tests "co.edu.udea.certificacion.calidad.runners.SimulationBancolombia"
